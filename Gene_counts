@@ -6,8 +6,8 @@
 ###########################################
 
 # writen by Hernan E. Morales
-# please cite Morales et al. in preparation
-# last modified 2016-07-22
+# please cite Morales, H. E., et al. (2016). "Mitochondrial-nuclear interactions maintain a deep mitochondrial split in the face of nuclear gene flow." bioRxiv 095596. doi: https://doi.org/10.1101/09559.
+# last modified 2017-01-22
 
 # USAGE
 # This script has to be used "manually"
@@ -56,7 +56,7 @@ mito_GO<- data.frame(mito_GO$Ensembl.Gene.ID)  # Keep Ensembl Gene IDs only
 ############# Count genes in areas of interest (e.g. divergent peaks) ##################
 
 # Filter all genes by chromsomome (e.g. 1A, 4 or Z) and genomic coordinates
-# When selecting genomic coordinates consider the rate of LD decay to capture linked genes (7.8 Kb in EYR, see paper)
+# When selecting genomic coordinates consider the rate of LD decay to capture linked genes (7.8 Kb in EYR, see Morales et al. 2016)
 
 Chr.Table<- subset(ZF_ALL, ZF_ALL$Chromosome.Name == XX)
 Chr.Table<- subset(Chr.Table, Chr.Table$GeneStart >= (XXXX - 7.8 Kb) & Chr.Table$GeneEnds <= (XXXX + 7.8 Kb))
@@ -112,10 +112,7 @@ for (i in CHR_Large$CHR){
 }
 
 z<- z[!duplicated(Match_Table[c("START", "END", "GENES")]),] # Eliminate duplicated entries
-
 # eliminate counts that fall within the "Peak_size" lenght by HAND (depends on were the are of interest is)
-
-
 # "z" is the final table, save and plot distributions. To test if the count of your are of interest is greater than the random distribution is a t.test
 
 # E.g. Plot random distrubutions
