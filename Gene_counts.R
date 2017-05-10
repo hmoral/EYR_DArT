@@ -123,3 +123,4 @@ ggplot(z, aes(x=mito)) + geom_density(color = "black", fill = "black", alpha = 0
 ggplot(z, aes(x=OXPHOS)) + geom_histogram(color = "black", fill = "black", alpha = 0.4, binwidth=1, right = T) +
   xlab("Genes with OXPHOS GO term") + xlim(-1,5) +
   ggtitle("Histogram of OXPHOS GO terms\n accross  random genomic regions")
+#
