@@ -9,7 +9,7 @@
 #########################################
 
 # writen by Hernan E. Morales
-# please cite Morales et al. in preparation
+# please cite Morales, H. E., et al. (2016). "Mitochondrial-nuclear interactions maintain a deep mitochondrial split in the face of nuclear gene flow." bioRxiv 095596. doi: https://doi.org/10.1101/09559.
 # last modified 2016-07-22
 
 # USAGE
@@ -45,11 +45,11 @@ geno<- SNPtable[,N:ncol(SNPtable)] # Change "N" with the number of column where 
 # Add column with the name of the loci from SNPtable
 row.names(geno)<- SNPtable$SNP_Code
 
-# Dummy set with 1000 loci for test code
+# Dummy set with 1000 loci for code testin, uncomment to use
 #geno<- geno[1:1000,]
 
 ## assign all non {0,1,2} to NA
-geno[(geno=="NA")] <- NA # Or whatever character for missing data e.g. -9
+geno[(geno=="NA")] <- NA # Or whatever character for missing data was used e.g. -9
 # Transpose the geno object
 geno<- data.frame(t(geno))
 # Assign a new column  with the name of the individuals
@@ -60,7 +60,7 @@ geno<- merge(geno,POPtable[c("Code", "POP")], by = "Code")
 geno<- geno[,-1]
 # Make a vector with list of pops
 POPS<- names(table(geno$POP))
-# Make an emtpty frequence table
+# Make an empty frequence table
 FREQ.TABLE.2<- data.frame(Locus= names(geno[,1:(ncol(geno)-1)]))
 # loop through pops to make allelic frequency tables
 for (i in POPS){
