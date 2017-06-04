@@ -1,5 +1,6 @@
 ########################
 # DISCLAMER: this is a reproduction of a script written by David Marques for Marques et al. 2016 PLoS Genetics
+# I used his script with small modifications
 # David's website with a link to the script: https://davidalexandermarques.com/software/
 ########################
 #! /usr/bin/Rscript
